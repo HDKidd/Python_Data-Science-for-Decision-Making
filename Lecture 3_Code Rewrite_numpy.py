@@ -4,7 +4,7 @@
 Created on Mon Aug 13 19:26:42 2018
 
 @author: He Dekun 
-Rewrigt code of Leture 2_Python Basic
+Rewrite code of Leture 3_numpy
 """
 
 #%%
