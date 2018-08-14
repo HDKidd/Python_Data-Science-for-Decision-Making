@@ -2,12 +2,10 @@
 # -*- coding: utf-8 -*-
 """
 Created on Tue Aug 14 20:41:21 2018
-
 @author: He Dekun 
 
 Debug for DataFrame.sort_values Error:
     ValueError: The column label 'APPL' is not unique.
-
 """
 
 #%% 
