@@ -131,5 +131,45 @@ print (ar9)
 print (np.exp(ar9))    # 对每个元素求自然底的指数函数
 print (math.exp(2))    # 验算
 
+print (ar9)
+print (np.sin(ar9))    # 对每个元素求 sin(弧度)
+print (math.sin(2))    # 验算
 
+print (ar9)
+print (np.sqrt(ar9))    # 对每个元素求平方根
+print (math.sqrt(2))    # 验算
 
+print (ar9)
+print (np.add(ar9,ar10))    # 求和函数
+
+#%%
+# 数组的合并与分割
+
+# 合并(堆叠)
+ar12 = np.vstack((ar9, ar10))    # 数组的垂直堆叠 vertical stack
+ar13 = np.hstack((ar9, ar10))    # 数组的水平堆叠 horizontal stack
+print (ar12)
+print (ar13)
+
+# 分割
+print (ar13)
+print (np.vsplit(ar13, 2))    # 将数组垂直分割（即水平切割）成两个数组
+
+print (ar12)
+print (np.hsplit(ar12, 2))    # 将数组水平分割（即垂直切割）成两个数组
+
+#%%
+# numpy 的其他方法
+
+print (np.empty([3, 4], dtype=int))    # 返回一个3x4的数组
+print (np.all(ar13))    # 判断是否 all 元素均为True，返回 True or Flase
+print (np.any(ar13))    # 判断是否 any 元素为True， 返回 True or Flase
+print (np.average(ar13))    # 返回所有元素计算的平均值
+print (np.std(ar13))    # 返回所有元素计算的标准差
+print (np.var(ar13))    # 返回所有元素计算的方差
+print (np.cov(ar13))    # 返回协方差矩阵，可以附加权重参数
+print (np.nonzero(ar13))    # 返回所有非零元素的位置
+print (np.sort(ar13))    # 对数组内数据进行升序排序（按行）
+print (np.reshape(ar13,(1,8)))   # 转换数组的规模但不改变其中的数据
+print (np.eye(6))    # 生成 6X6 的单位矩阵  identity 也可以实现
+print (np.transpose(ar13))    # 转置 与 .T 相同
