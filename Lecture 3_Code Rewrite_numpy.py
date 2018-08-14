@@ -4,26 +4,30 @@
 Created on Mon Aug 13 19:26:42 2018
 
 @author: He Dekun 
-Rewrite code of Leture 3_numpy
+Rewrite code of Lecture 3_numpy
 """
 
 #%%
-# 安装module
-
+# 安装 module
 """
+!pip
+!pip list
 !pip install pandas
 !pip install numpy
 !pip install matplotlib
+!pip install fix_yahoo_finance
 """
+
+
 
 # 模块导入
 
-"""
+
 import numpy    # 直接导入模块 numpy
 import numpy as np    # 导入模块 numpy 后改名为 np
 from numpy import array    # 从模块 numpy 中导入其中的 array 方法
 from numpy import array as ay    # 从模块中导入 array 方法并改名为 ay
-"""
+
 
 #%%
 # Numpy 模块： 用于科学计算，多维数据处理，矩阵运算等
@@ -40,6 +44,7 @@ ar4 = np.identity(3)    # 生成单位矩阵(3x3)
 ar5 = np.random.random(size=(2, 3))    # 生成每个元素都在[0,1]之间的随机矩阵(2x3)
 ar6 = np.arange(5, 20, 3)    # 生成等距序列，参数为起点，终点，步长，右不包含
 ar7 = np.linspace(5, 20, 3)    # 生成等距序列，参数为起点，终点，元素个数，右包含
+ar71 = np.linspace(5, 20, 3, endpoint=False)    # 生成等距序列，参数为起点，终点，元素个数，右包含
 
 print (ar1)
 print (ar2)
@@ -48,6 +53,7 @@ print (ar4)
 print (ar5)
 print (ar6)
 print (ar7)
+print (ar71)
 
 #%%
 # 访问数组属性
@@ -100,15 +106,15 @@ print (ar9 - ar10)    # 矩阵加减法
 print (ar9 ** 3)    # 矩阵每个元素求幂
 print (3 * ar10)    # 矩阵的数乘
 print (ar9 * ar10)    # 矩阵每个元素求积
-print (np.dot(ar9, ar10))    # 矩阵的左乘
+print (np.dot(ar9, ar10))    # 矩阵的点乘
 print (ar10.T)    # 矩阵转置
 print (np.linalg.inv(ar10))    # 矩阵求逆
 
 # 数组内部元素求和
 print (ar10)
 print (ar10.sum())    # 数组内部元素求和
-print (ar10.sum(axis=0))    # 返回行求和（每行相同列坐标的元素相加）
-print (ar10.sum(axis=1))    # 返回列求和（每列相同行坐标的元素相加）
+print (ar10.sum(axis=0))    # 返回行求和（竖向求和）
+print (ar10.sum(axis=1))    # 返回列求和（横向求和）
 
 # 数组内部元素求最大值
 print (ar10)
@@ -153,7 +159,7 @@ print (ar13)
 
 # 分割
 print (ar13)
-print (np.vsplit(ar13, 2))    # 将数组垂直分割（即水平切割）成两个数组
+print (np.vsplit(ar13, 2))    # 将数组垂直分割（即水平切割）成两个数组，返回的是列表形式
 
 print (ar12)
 print (np.hsplit(ar12, 2))    # 将数组水平分割（即垂直切割）成两个数组
